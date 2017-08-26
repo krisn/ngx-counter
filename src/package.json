@@ -1,9 +1,9 @@
 {
   "name": "ngx-counter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
-    "url": "git@github.com:krisn/ngx-countme.git"
+    "url": "git@github.com:krisn/ngx-counter.git"
   },
   "author": {
     "name": "Kris Nyunt",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "git@github.com:krisn/ngx-countme.git/issues"
+    "url": "git@github.com:krisn/ngx-counter.git/issues"
   },
   "main": "ngx-counter.umd.js",
   "module": "ngx-counter.js",
