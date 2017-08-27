@@ -6,6 +6,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   template: `
 <div id="wrap" class="ct-wrap ct-anim"
   [class.blink]="blink"
+  [class.border-top]="circuit === 0"
+  [class.border-right]="circuit === 1"
+  [class.border-bottom]="circuit === 2"
+  [class.border-left]="circuit === 3"
 >
   <div class="ct-count"
     [class.ct-1x]="size === 'small'"
@@ -99,29 +103,28 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
     return this._countValue;
   }
 
-  private blink: boolean = false;
-  private timerCt: any;
-  private timerAnim: any;
+  private blink: boolean;
+  private circuit: number;
+  private timer: any;
 
   constructor() {}
 
   ngOnInit() {
-    this.timerCt = setInterval(() => {
-      if (this.countValue === this.limit) {
-        clearInterval(this.timerCt);
-        return;
-      }
-      this.countValue++;
-    }, this.interval);
+    this.blink = false;
+    this.circuit = -1;
 
-    this.timerAnim = setInterval(() => {
+    this.timer = setInterval(() => {
       if (this.countValue === this.limit) {
         this.blink = false;
-        clearInterval(this.timerAnim);
+        this.circuit = -1;
+        clearInterval(this.timer);
         return;
       }
-      this.blink = !this.blink;
-    }, this.interval / 2);
+      this.circuit++;
+      if (this.circuit > 3) { this.circuit = 0; }
+      this.blink = this.circuit === 1 || this.circuit === 3 ? !this.blink : this.blink;
+      if (this.circuit === 0) { this.countValue++; }
+    }, this.interval / 4);
   }
 
   writeValue(value: any) {
