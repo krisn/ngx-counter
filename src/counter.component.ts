@@ -93,7 +93,7 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
   @Output() change = new EventEmitter<number>();
   @Input() size: string = 'medium';
   @Input() interval: number = 1000;
-  @Input() limit: number = 10;
+  @Input() limit: number;
   private _countValue = 0;
   @Input() set countValue(val) {
     this._countValue = val;
@@ -112,9 +112,10 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
   ngOnInit() {
     this.blink = false;
     this.circuit = -1;
+    this.limit = this.limit !== undefined ? this.limit : this.countValue + 10;
 
     this.timer = setInterval(() => {
-      if (this.countValue === this.limit) {
+      if (this.countValue >= this.limit) {
         this.blink = false;
         this.circuit = -1;
         clearInterval(this.timer);
@@ -123,7 +124,10 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
       this.circuit++;
       if (this.circuit > 3) { this.circuit = 0; }
       this.blink = this.circuit === 1 || this.circuit === 3 ? !this.blink : this.blink;
-      if (this.circuit === 0) { this.countValue++; }
+      if (this.circuit === 0) {
+        this.countValue++;
+        this.change.emit(this.countValue);
+      }
     }, this.interval / 4);
   }
 
