@@ -30,7 +30,7 @@ import { CounterModule } from 'ngx-counter';
     BrowserModule,
 
     // Specify the library as an import
-    LibraryModule
+    CounterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
