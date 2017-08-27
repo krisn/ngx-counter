@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'counter',
   template: `
-<div id="wrap" class="ct-wrap ct-anim"
+<div class="ct-wrap ct-anim"
   [class.blink]="blink"
   [class.border-top]="circuit === 0"
   [class.border-right]="circuit === 1"
@@ -12,9 +12,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   [class.border-left]="circuit === 3"
 >
   <div class="ct-count"
-    [class.ct-1x]="size === 'small'"
-    [class.ct-2x]="size === 'medium'"
-    [class.ct-3x]="size === 'big'"
+    [class.ct-1x]="size == 'small'"
+    [class.ct-2x]="size == 'medium'"
+    [class.ct-3x]="size == 'big'"
   >
     {{countValue}}
   </div>
