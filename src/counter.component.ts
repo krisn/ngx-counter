@@ -32,7 +32,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   background-color: #d6f0f9;
   color: blue;
   border-radius: 50%;
-  border-style: solid;
+  border-style: none;
   border-color: #d6f0f9;
   border-width: 5px;
   width: 50px;
@@ -73,19 +73,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 }
 
 .border-top {
-  border-top-color: #0000e0;
+  /*border-top-color: #0000e0;*/
+  border-top-style: solid;
 }
 
 .border-right {
-  border-right-color: #0000e0;
+  /*border-right-color: #0000e0;*/
+  border-right-style: solid;
 }
 
 .border-bottom {
-  border-bottom-color: #0000e0;
+  /*border-bottom-color: #0000e0;*/
+  border-bottom-style: solid;
 }
 
 .border-left {
-  border-left-color: #0000e0;
+  /*border-left-color: #0000e0;*/
+  border-left-style: solid;
 }
 
 .ct-count {
