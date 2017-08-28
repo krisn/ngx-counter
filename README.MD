@@ -68,7 +68,7 @@ Parameter | Type | Default | Description
 **countValue** | *number* | `0` | Count value that will be incremented
 **limit** | *number* | `countValue + 10` | Limit where counting will stop 
 **speed** | *number* | `1000` | Speed of the counter in milli-seconds
-**change1** | *event* | `noop` | The callback function for each count change
+**change** | *event* | `noop` | The callback function for each count change
 **size** | *string* | `medium` | Size of the counter display 'small', 'medium', 'big', 'large', 'xl' 
 **font** | *string* | `monospace` | Font family to use
 **theme** | *string* | `blue` | Color theme 'blue', 'red', 'green', 'gray'
@@ -80,8 +80,8 @@ Parameter | Type | Default | Description
 
 ```html
 <counter [(ngModel)]="counterStart" [limit]=10 size="small" theme="red"></counter>
-<counter [countValue]=1 [limit]=10 (change)="counterChanged($event)" font="cursive" theme="green"></counter>
-<counter [countValue]=0 [speed]=1000 size="big"></counter>
+<counter [countValue]=1 [limit]=10 font="cursive" theme="green"></counter>
+<counter [countValue]=0 [speed]=1000 size="big" (change)="counterChanged($event)"></counter>
 <counter [countValue]=-1 [limit]=counterFinish size="large" font="Arial" theme="gray"></counter>
 <counter countValue=-2 limit=10 size="xl" color="gold" bgcolor="#F5F5DC"></counter>
 ```

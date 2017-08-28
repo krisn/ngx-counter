@@ -1,6 +1,6 @@
 {
   "name": "ngx-counter",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:krisn/ngx-counter.git"
@@ -10,7 +10,10 @@
     "email": "kris.nyunt@gmail.com"
   },
   "keywords": [
-    "angular", "counter", "timer", "animated"
+    "angular",
+    "counter",
+    "timer",
+    "animated"
   ],
   "license": "MIT",
   "bugs": {
