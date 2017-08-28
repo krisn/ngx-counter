@@ -10,11 +10,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   [class.border-right]="circuit === 1"
   [class.border-bottom]="circuit === 2"
   [class.border-left]="circuit === 3"
->
+  [class.small]="size == 'small'"
+  [class.medium]="size == 'medium'"
+  [class.big]="size == 'big'"
+  [class.large]="size == 'large'"
+  >
   <div class="ct-count"
     [class.ct-1x]="size == 'small'"
     [class.ct-2x]="size == 'medium'"
     [class.ct-3x]="size == 'big'"
+    [class.ct-4x]="size == 'large'"
+    [style.font-family]="font"
   >
     {{countValue}}
   </div>
@@ -23,12 +29,38 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   styles: [`
 .ct-wrap {
   display: inline-block;
+  background-color: #d6f0f9;
+  color: blue;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #d6f0f9;
+  border-width: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.small {
+  border-width: 3px;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #d6f0f9;
-  border: solid 5px #d6f0f9;
-  color: blue;
+}
+
+.medium {
+  border-width: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.big {
+  border-width: 7px;
+  width: 60px;
+  height: 60px;
+}
+
+.large {
+  border-width: 9px;
+  width: 70px;
+  height: 70px;
 }
 
 .ct-anim {
@@ -66,13 +98,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   transform: translateY(-50%);
 }
 
+.ct-4x {
+  font-size: 40px;
+  font-weight: bold;
+}
+
 .ct-3x {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
 }
 
 .ct-2x {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -92,6 +129,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class CounterComponent implements ControlValueAccessor, OnInit {
 
   @Output() change = new EventEmitter<number>();
+  @Input() font: string = 'monospace';
   @Input() size: string = 'medium';
   @Input() speed: number = 1000;
   @Input() limit: number;
@@ -104,8 +142,8 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
     return this._countValue;
   }
 
-  private blink: boolean;
-  private circuit: number;
+  blink: boolean;
+  circuit: number;
   private timer: any;
 
   constructor() {}
