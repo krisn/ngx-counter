@@ -10,7 +10,7 @@
     "email": "kris.nyunt@gmail.com"
   },
   "keywords": [
-    "angular"
+    "angular", "counter", "timer", "animated"
   ],
   "license": "MIT",
   "bugs": {

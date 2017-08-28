@@ -48,6 +48,68 @@ Once the library is imported, you can use its component in your Angular applicat
 <counter></counter>
 ```
 
+# Two way binding
+
+```html
+<counter [(ngModel)]="myCountValue"></counter>
+```
+
+# Params
+
+### countValue
+
+> type: *number*
+
+> default: 0
+
+```html
+<counter countValue=10></counter>
+<counter [countValue]="myCountValue"></counter>
+```
+
+### limit
+
+> type: *number*
+
+> default: countValue + 10
+
+```html
+<counter countValue=0 limit=10></counter>
+<counter [countValue]="myCountValue" [limit]="myCounterLimit"></counter>
+```
+
+### speed
+
+> type: *number*
+
+> default: 1000 (1 second)
+
+```html
+<counter countValue=0 limit=10 speed=500></counter>
+<counter [speed]="myCounterSpeed"></counter>
+```
+
+### change
+
+> type: *event*
+
+> default: noop
+
+```html
+<counter (change)="onCountChange($event)"></counter>
+```
+
+### size
+
+> type: *string*
+
+> default: medium
+
+```html
+<counter size="small"></counter>
+<counter size="big"></counter>
+```
+
 ## License
 
 MIT © [Kris Nyunt](mailto:kris.nyunt@gmail.com)

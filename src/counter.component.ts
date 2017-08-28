@@ -22,6 +22,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   `,
   styles: [`
 .ct-wrap {
+  display: inline-block;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -92,7 +93,7 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
 
   @Output() change = new EventEmitter<number>();
   @Input() size: string = 'medium';
-  @Input() interval: number = 1000;
+  @Input() speed: number = 1000;
   @Input() limit: number;
   private _countValue = 0;
   @Input() set countValue(val) {
@@ -128,7 +129,7 @@ export class CounterComponent implements ControlValueAccessor, OnInit {
         this.countValue++;
         this.change.emit(this.countValue);
       }
-    }, this.interval / 4);
+    }, this.speed / 4);
   }
 
   writeValue(value: any) {
