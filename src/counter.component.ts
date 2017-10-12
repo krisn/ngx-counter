@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, forwardRef } from '@ang
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'counter',
+  selector: 'ngx-counter',
   template: `
 <div class="ct-wrap ct-anim"
   [class.blink]="blink"

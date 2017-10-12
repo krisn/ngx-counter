@@ -1,7 +1,5 @@
 # ngx-counter
 
-[![ngx-counter](https://user-images.githubusercontent.com/351126/29777124-3bbe137a-8c4e-11e7-9918-71f2fbb1ac6a.png)](https://github.com/krisn/ngx-counter)
-
 [![npm version](https://badge.fury.io/js/ngx-counter.svg)](https://badge.fury.io/js/ngx-counter)
 [![license](https://img.shields.io/npm/l/ngx-counter.svg)](https://www.npmjs.com/package/ngx-counter)
 
@@ -52,13 +50,13 @@ Once the library is imported, you can use its component in your Angular applicat
 <h1>
   {{title}}
 </h1>
-<counter></counter>
+<ngx-counter></ngx-counter>
 ```
 
 ## Model binding
 
 ```html
-<counter [(ngModel)]="myCountValue"></counter>
+<ngx-counter [(ngModel)]="myCountValue"></ngx-counter>
 ```
 
 ## Parameters
@@ -73,18 +71,20 @@ Parameter | Type | Default | Description
 **font** | *string* | `monospace` | Font family to use
 **theme** | *string* | `blue` | Color theme 'blue', 'red', 'green', 'gray'
 **color** | *string* | `blue` | Main color for the number and the border (if no theme specified)
-**bgcolor** | *string* | `#d6f0f9` | Background color use (if no theme specified)
+**bgcolor** | *string* | `#d6f0f9` | Background color to use (if no theme specified)
 
 
 ## Examples
 
 ```html
-<counter [(ngModel)]="counterStart" [limit]=10 size="small" theme="red"></counter>
-<counter [countValue]=1 [limit]=10 font="cursive" theme="green"></counter>
-<counter [countValue]=0 [speed]=1000 size="big" (change)="counterChanged($event)"></counter>
-<counter [countValue]=-1 [limit]=counterFinish size="large" font="Arial" theme="gray"></counter>
-<counter countValue=-2 limit=10 size="xl" color="gold" bgcolor="#F5F5DC"></counter>
+<ngx-counter [(ngModel)]="counterStart" [limit]=10 size="small" theme="red"></ngx-counter>
+<ngx-counter [countValue]=1 [limit]=10 font="cursive" theme="green"></ngx-counter>
+<ngx-counter [countValue]=0 [speed]=1000 size="big" (change)="counterChanged($event)"></ngx-counter>
+<ngx-counter [countValue]=-1 [limit]=counterFinish size="large" font="Arial" theme="gray"></ngx-counter>
+<ngx-counter countValue=-2 limit=10 size="xl" color="gold" bgcolor="#F5F5DC"></ngx-counter>
 ```
+
+[![ngx-counter](https://user-images.githubusercontent.com/351126/29777124-3bbe137a-8c4e-11e7-9918-71f2fbb1ac6a.png)](https://github.com/krisn/ngx-counter)
 
 ## License
 
