@@ -1,9 +1,10 @@
 # ngx-counter
 
+Customizable counter component for Angular 2+
+
 [![npm version](https://badge.fury.io/js/ngx-counter.svg)](https://badge.fury.io/js/ngx-counter)
 [![license](https://img.shields.io/npm/l/ngx-counter.svg)](https://www.npmjs.com/package/ngx-counter)
 
-Customizable counter component module for Angular 2+
 ## Installation
 
 [![NPM](https://nodei.co/npm/ngx-counter.png?downloads=true&stars=true)](https://nodei.co/npm/ngx-counter/)
